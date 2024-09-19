@@ -32,4 +32,6 @@ class PersonIDEvent(BaseModel):
     birthday: str
     address: str
     expired: str
+    id_number: str
+    phone_number: str
     pass
