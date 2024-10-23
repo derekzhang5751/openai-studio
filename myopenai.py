@@ -28,10 +28,11 @@ def chat_with_gpt(messages: [], model="gpt-4o-mini") -> str:
 
 
 class PersonIDEvent(BaseModel):
-    name: str
+    first_name: str
+    last_name: str
+    middle_name: str
     birthday: str
+    id_number: str
     address: str
     expired: str
-    id_number: str
-    phone_number: str
     pass
