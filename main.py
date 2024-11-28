@@ -8,5 +8,5 @@ if __name__ == "__main__":
         [image_reader_page],
         ["Image Reader"]
     )
-    home_page.launch(share=True)
+    home_page.launch(share=False)
     pass

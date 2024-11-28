@@ -3,7 +3,7 @@ import json
 
 import gradio as gr
 
-from myopenai import chat_with_gpt
+from myopenai import chat_with_gpt_get_info
 
 
 def encode_image(image_path):
@@ -20,28 +20,8 @@ def upload_image_to_chat(image_path):
     except Exception as e:
         return json.dumps({"error": f"Failed to encode image: {str(e)}"}, indent=2)
 
-    prompts = "Please read the information in this ID image and return it in JSON format."
-
-    messages = [
-        {
-            "role": "user",
-            "content": [
-                {
-                    "type": "text",
-                    "text": prompts
-                },
-                {
-                    "type": "image_url",
-                    "image_url": {
-                        "url": f"data:image/jpeg;base64,{base64_image}"
-                    }
-                }
-            ]
-        }
-    ]
-
     try:
-        response = chat_with_gpt(messages)
+        response = chat_with_gpt_get_info(f"data:image/jpeg;base64,{base64_image}")
         json_response = json.loads(response)
         return json.dumps(json_response, indent=2)
     except json.JSONDecodeError:
