@@ -23,10 +23,12 @@ def chat_with_gpt_get_info(image: str, model="gpt-4o-mini") -> str:
                "Rule 1: Please determine the required content according to the title in the picture, "
                "the title is usually above the content."
                "such as: given name or first name is first name, middle name is the middle name. "
-               "Rule 2: If there is a single line for the middle name and the first name contains spaces, "
+               "Rule 2: Each name may contain multiple spaces. "
+               "Rule 3: If there is a single line for the middle name and the first name contains spaces, "
                "do not split the first name, it is a complete first name including spaces."
-               "Rule 3: if there is no middle name, set it to empty."
-               "Rule4: A comma or period cannot be part of a name; it is a separator.")
+               "Rule 4: if there is no middle name, set it to empty."
+               "Rule 5: A comma or period cannot be part of a name; it is a separator."
+               "Rule 6: the format of birthday is 'YYYY-MM-DD'. '")
 
     messages = [
         {
