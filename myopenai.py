@@ -28,7 +28,8 @@ def chat_with_gpt_get_info(image: str, model="gpt-4o-mini") -> str:
                "do not split the first name, it is a complete first name including spaces."
                "Rule 4: if there is no middle name, set it to empty."
                "Rule 5: A comma or period cannot be part of a name; it is a separator."
-               "Rule 6: the format of birthday is 'YYYY-MM-DD'. '")
+               "Rule 6: the format of birthday is 'YYYY-MM-DD'. '"
+               "Rule 7: The language of the ID can be English and Filipino. ")
 
     messages = [
         {
